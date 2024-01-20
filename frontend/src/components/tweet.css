@@ -1,0 +1,17 @@
+.tweet-container {
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 20%;
+}
+
+.tweet {
+    background-color: aqua;
+    height: 70%;
+}
+
+.reactions {
+    background-color: green;
+    height: 30%;
+}
