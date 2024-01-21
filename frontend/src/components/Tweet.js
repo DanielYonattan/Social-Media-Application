@@ -1,13 +1,13 @@
 import "./tweet.css"
 
-export default function Tweet() { 
+export default function Tweet({tweet}) { 
     return (  
         <div className="tweet-container">
             <div className="tweet">
-                hello
+                {tweet.tweet}
             </div>
             <div className="reactions">
-                like
+                hello
             </div>
         </div>
     )

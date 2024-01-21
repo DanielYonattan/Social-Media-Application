@@ -36,7 +36,17 @@ router.put("/:id", async (req, res) => {
 
 // like post
 
-// get post 
+// get post from a user
+
+router.get("/:username", async (req, res) => {
+    try {
+        const post = await Post.find({userId: req.params.username})
+        res.status(200).json(post)
+    }
+    catch(err){
+        res.status(500).json(err)
+    }
+})
 
 // get timeline
 

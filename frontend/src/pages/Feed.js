@@ -1,15 +1,30 @@
 import './feed.css';
 import Tweet from '../components/Tweet.js'
 
+import React, {useState, useEffect} from "react"
+
+
+
 export default function Feed() {
-  return (
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await fetch("http://localhost:3000/api/posts/daniel")
+      const posts = await res.json()
+      console.log(posts)
+      setPosts(posts)
+    }  
+    fetchPosts()
+  }, [])
+ 
+  return ( 
     <div className='feed'>
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-
-    </div>
+      {posts.map((p) => (
+        <Tweet tweet={p} />
+      ))}
+    </div> 
   );
-}
-
+} 
+   
+ 
