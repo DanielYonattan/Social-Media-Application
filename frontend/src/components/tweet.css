@@ -2,13 +2,13 @@
     background-color: beige;
     display: flex;
     flex-direction: column;
-    width: 90%;
-    height: 20%;
+    width: 400px;
+    height: 100px;
 }
 
 .tweet {
     background-color: aqua;
-    height: 70%;
+    height: 200px;
 }
 
 .reactions {

@@ -40,7 +40,7 @@ router.put("/:id", async (req, res) => {
 
 router.get("/:username", async (req, res) => {
     try {
-        const post = await Post.find({userId: req.params.username})
+        const post = await Post.find({userId: req.params.username}).sort({_id: -1})
         res.status(200).json(post)
     }
     catch(err){
