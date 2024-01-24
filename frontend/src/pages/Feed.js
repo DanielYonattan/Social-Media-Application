@@ -1,5 +1,6 @@
 import './feed.css';
 import Tweet from '../components/Tweet.js'
+import Postbox from '../components/PostBox.js'
 
 import React, {useState, useEffect} from "react"
 
@@ -19,11 +20,17 @@ export default function Feed() {
   }, [])
  
   return ( 
-    <div className='feed'>
-      {posts.map((p) => (
-        <Tweet tweet={p} />
-      ))}
-    </div> 
+    <div className='feed-container'>
+      <div className='feed'>
+        {posts.map((p) => (
+          <Tweet tweet={p} />
+        ))}
+      </div> 
+
+      <div className='post-box'>
+        <Postbox />
+      </div>
+    </div>
   );
 } 
    

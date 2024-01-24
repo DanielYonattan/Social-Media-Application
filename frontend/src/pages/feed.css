@@ -1,3 +1,8 @@
+.feed-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .feed {
   display: flex;
   background-color: red;
@@ -9,4 +14,8 @@
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.post-box {
+  background-color: crimson;
 }
