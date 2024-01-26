@@ -3,6 +3,7 @@ const Post = require("../models/Post");
 
 // create post
 router.post("/", async (req, res) => {
+    console.log("req body: " + req.body)
     const newPost = new Post(req.body)
 
     try {
@@ -11,6 +12,7 @@ router.post("/", async (req, res) => {
     }
     catch(err){ 
         res.status(500).json(err);
+        console.log(req.body)
     }
 
 })
