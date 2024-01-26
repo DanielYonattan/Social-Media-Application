@@ -3,7 +3,6 @@ const Post = require("../models/Post");
 
 // create post
 router.post("/", async (req, res) => {
-    console.log("req body: " + req.body)
     const newPost = new Post(req.body)
 
     try {
