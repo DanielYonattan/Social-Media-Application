@@ -3,6 +3,7 @@ import Tweet from '../components/Tweet.js'
 import Postbox from '../components/PostBox.js'
 
 import React, {useState, useEffect, useContext} from "react"
+import { UserContext } from '../UserContext';
 
 
 
@@ -18,6 +19,8 @@ export default function Feed() {
     }  
     fetchPosts()
   }, [])
+
+ console.log(useContext(UserContext) + "helllllloooooooo")
  
   return ( 
     <div className='feed-container'>
@@ -31,6 +34,7 @@ export default function Feed() {
         <Postbox />
       </div>
     </div>
+    
   );
 } 
    
