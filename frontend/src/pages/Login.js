@@ -3,7 +3,6 @@ import { createContext } from "react";
 
 async function handleLogin() {
     const username = document.querySelector('#username').value
-    console.log(username)
 
     const password = document.querySelector('#password').value
 
@@ -16,6 +15,10 @@ async function handleLogin() {
             "password": password
         })
     })
+
+    const user = await res.json()
+
+    const UserContext = createContext(user._id)
 }
 
 export default function Login() {
