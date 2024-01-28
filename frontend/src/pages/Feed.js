@@ -2,7 +2,7 @@ import './feed.css';
 import Tweet from '../components/Tweet.js'
 import Postbox from '../components/PostBox.js'
 
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useContext} from "react"
 
 
 

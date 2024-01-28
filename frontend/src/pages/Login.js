@@ -1,9 +1,10 @@
 import './login.css'
-import { createContext } from "react";
+import { useNavigate } from 'react-router-dom'
+
+export let user = "";
 
 async function handleLogin() {
     const username = document.querySelector('#username').value
-
     const password = document.querySelector('#password').value
 
     const res = await fetch("http://localhost:3000/api/auth/login", {
@@ -16,17 +17,20 @@ async function handleLogin() {
         })
     })
 
-    const user = await res.json()
-
-    const UserContext = createContext(user._id)
+    user = await res.json()._id
 }
 
 export default function Login() {
+    const navigate = useNavigate()
     return (
         <div>
             <input placeholder='username' id='username'/>
             <input placeholder='password' id='password'/>
-            <button className='login-button' onClick={() => handleLogin()}>Login</button>
+            <button className='login-button' onClick={() => {
+                handleLogin() 
+                navigate("../home")
+            }}>Login</button>
+            
         </div>
     );
 }
