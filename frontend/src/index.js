@@ -4,7 +4,6 @@ import './index.css';
 import Feed from './pages/Feed.js';
 import Login from './pages/Login'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { UserContext } from './UserContext';
 
 
 
@@ -16,7 +15,7 @@ root.render(
           <Route path="/home" element={<Feed />}></Route>
           <Route path="/login" element={<Login />}></Route>
         </Routes>
-    </BrowserRouter>
+    </BrowserRouter> 
   </React.StrictMode>
 );
  

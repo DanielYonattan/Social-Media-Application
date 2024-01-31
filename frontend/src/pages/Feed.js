@@ -1,15 +1,14 @@
 import './feed.css';
 import Tweet from '../components/Tweet.js'
 import Postbox from '../components/PostBox.js'
-
+import UserContext from "./Login"
 import React, {useState, useEffect, useContext} from "react"
-import { UserContext } from '../UserContext';
 
 
 
 export default function Feed() {
   const [posts, setPosts] = useState([])
-
+  console.log(useContext(UserContext) + "aaaaaaaaa")
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await fetch("http://localhost:3000/api/posts/daniel")
@@ -20,7 +19,6 @@ export default function Feed() {
     fetchPosts()
   }, [])
 
- console.log(useContext(UserContext) + "helllllloooooooo")
  
   return ( 
     <div className='feed-container'>

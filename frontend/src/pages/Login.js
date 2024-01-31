@@ -1,8 +1,10 @@
-import { useContext } from 'react'
+import React, { createContext } from 'react'
 import './login.css'
+import Feed from './Feed';
+
 import { useNavigate } from 'react-router-dom'
 
-
+ 
 
 async function handleLogin() {
     const username = document.querySelector('#username').value
@@ -19,6 +21,7 @@ async function handleLogin() {
     })
 
     return await res.json()._id
+    
 }
 
 
@@ -30,11 +33,13 @@ export default function Login() {
             <input placeholder='username' id='username'/>
             <input placeholder='password' id='password'/>
             <button className='login-button' onClick={() => {
-                const user = handleLogin() 
+                const userId = handleLogin()
+                const UserContext = createContext("null")
                 navigate("../home") 
             }}>Login</button>
             
         </div>
+
     );
 }
 
