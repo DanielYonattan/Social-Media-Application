@@ -9,7 +9,7 @@ async function postTweet(){
             headers: {'content-Type': 'application/json'},  // headers, mode, and json.stringify
             mode: 'cors',
             body: JSON.stringify({
-                "userId": "daniel",
+                "userId": "65b32a65a3fb52afff8e3d8c",
                 "tweet": tweet
             }
             )

@@ -39,9 +39,9 @@ router.put("/:id", async (req, res) => {
 
 // get post from a user
 
-router.get("/:username", async (req, res) => {
+router.get("/:id", async (req, res) => {
     try {
-        const post = await Post.find({userId: req.params.username}).sort({_id: -1})
+        const post = await Post.find({userId: req.params.id}).sort({_id: -1})
         res.status(200).json(post)
     }
     catch(err){
