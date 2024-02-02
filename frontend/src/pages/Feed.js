@@ -7,7 +7,7 @@ import { userId } from './Login';
 
 export default function Feed() {
   const [posts, setPosts] = useState([])
-
+  console.log(userId)
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await fetch(`http://localhost:3000/api/posts/${userId}`)
