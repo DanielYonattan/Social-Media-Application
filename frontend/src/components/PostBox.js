@@ -1,6 +1,5 @@
 import './postbox.css'
 import React from "react"
-import { userId } from '../pages/Login';
  
 
 async function postTweet(){ 
@@ -11,7 +10,7 @@ async function postTweet(){
             headers: {'content-Type': 'application/json'},  // headers, mode, and json.stringify
             mode: 'cors',
             body: JSON.stringify({
-                "userId": `${userId}`,
+                "userId": `daniel`,
                 "tweet": tweet
             }
             )
