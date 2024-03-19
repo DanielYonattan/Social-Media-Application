@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Post = require("../models/Post");
+const User = require('../models/User')
 
 // create post
 router.post("/", async (req, res) => {
@@ -50,5 +51,22 @@ router.get("/:id", async (req, res) => {
 })
 
 // get timeline
+// loop through following and extract all posts 
+router.get("/feed/:id", async (req, res) => {
+    try {
+        const user = await User.findOne({_id: req.params.id})
+        const posts = []
+        
+        user.following.forEach( async (person) => {
+           posts = posts.concat(await Post.find({userId: person}).sort({_id: -1}))
+        })
+
+        res.status(200).json(posts)
+    }
+    catch(err){
+        res.status(500).json(err)
+    }
+})
+
 
 module.exports = router

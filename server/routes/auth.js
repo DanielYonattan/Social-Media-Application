@@ -28,7 +28,7 @@ router.post("/login", async (req,res) => {
         });
 
         if (user == null)
-            res.status(404).json("user not found");
+            res.status(404).json("false");
         else
             res.status(200).json(user._id);
     }
