@@ -8,7 +8,7 @@
 
 .feed {
   display: flex;
-  background-color: wheat;
+  background-color: dimgray;
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -16,16 +16,16 @@
   justify-content: start;
   align-items: center;
   margin: 0;
-  gap: 5px
+  gap: 10px
 
 }
 
 .leftBar {
-  background-color: blue;
+  background-color: dimgray;
   width: 40vw;
 }
 
 .rightBar {
-  background-color: blue;
+  background-color: dimgray;
   width: 40vw
 }

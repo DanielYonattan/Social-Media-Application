@@ -6,8 +6,8 @@
     max-width: 500px;
     width: 100%;
     height: 100px;
-    box-shadow: 0px 0px 5px 0px white;
-
+    box-shadow: 0px 0px 8px 0px white;
+    
 
 }
 
@@ -19,6 +19,6 @@
 }
 
 .poster-info {
-    background-color: green;
+    background-color: lightblue;
     height: 30%;
 }
