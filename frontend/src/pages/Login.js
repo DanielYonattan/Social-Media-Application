@@ -21,7 +21,6 @@ export default function Login() {
     return (
         
         <div>
-            
             <input placeholder='username' id='username'/>
             <input placeholder='password' id='password'/>
             <button className='login-button' onClick={handleLogin}>Login</button>

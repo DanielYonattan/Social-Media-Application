@@ -42,7 +42,9 @@ router.put("/:id", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
     try {
-        const post = await Post.find({userId: req.params.id}).sort({_id: -1})
+        let post = []
+        post.push(await Post.find({userId: req.params.id}).sort({_id: -1}))
+        console.log(post)
         res.status(200).json(post)
     }
     catch(err){
@@ -50,17 +52,19 @@ router.get("/:id", async (req, res) => {
     }
 })
 
-// get timeline
-// loop through following and extract all posts 
+// get timeline 
+// loop through following and extract all posts
+
+// 65b32a65a3fb52afff8e3d8c
 router.get("/feed/:id", async (req, res) => {
     try {
         const user = await User.findOne({_id: req.params.id})
-        const posts = []
         
-        user.following.forEach( async (person) => {
-           posts = posts.concat(await Post.find({userId: person}).sort({_id: -1}))
-        })
-
+        const posts = await Promise.all( 
+            user.following.map((person) => {
+                return Post.find({userId: person}).sort({_id: -1})
+        }))
+        console.log(posts)
         res.status(200).json(posts)
     }
     catch(err){
