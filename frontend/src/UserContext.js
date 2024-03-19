@@ -25,6 +25,7 @@ const AuthProvider = ({ children }) => {
 
       if (res != "false") {
         setUser(res);
+        localStorage.setItem("user", res)
         navigate("/home");
         return;
       }

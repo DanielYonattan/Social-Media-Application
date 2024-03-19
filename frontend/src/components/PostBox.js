@@ -1,8 +1,9 @@
 import './postbox.css'
 import React from "react"
- 
+import Feed from '../pages/Feed.js'
 
 async function postTweet(){ 
+        const user = localStorage.getItem("user")
         const tweet = document.querySelector('#tweet').value
 
         await fetch("http://localhost:3000/api/posts/", {
@@ -10,11 +11,13 @@ async function postTweet(){
             headers: {'content-Type': 'application/json'},  // headers, mode, and json.stringify
             mode: 'cors',
             body: JSON.stringify({
-                "userId": `daniel`,
+                "userId": user,
                 "tweet": tweet
             }
             )
         })
+
+        
     }  
 
 export default function Postbox() { 

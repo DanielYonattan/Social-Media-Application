@@ -10,16 +10,22 @@ import { AuthContext } from '../UserContext.js'
 export default function Feed() {
   const auth = useContext(AuthContext)
   const [posts, setPosts] = useState([])
-
+  const user = localStorage.getItem("user")
+  console.log(user)
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch(`http://localhost:3000/api/posts/feed/${auth.user}`)
+      const res = await fetch(`http://localhost:3000/api/posts/feed/${user}`)
       const posts = await res.json()
-      console.log(posts)
       setPosts(posts) 
     }  
-    fetchPosts() 
-  }, [])        
+    fetchPosts()  
+  }, [])
+  
+  if (posts == "") {
+    return <Tweet tweet="empty" />
+  }
+  
+  
 
  
   return ( 
