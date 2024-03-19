@@ -9,7 +9,7 @@ import { AuthContext } from '../UserContext.js'
 export default function Feed() {
   const auth = useContext(AuthContext)
   const [posts, setPosts] = useState([])
-  const user = localStorage.getItem("user")
+  const user = localStorage.getItem("userId")
   console.log(user)
   useEffect(() => {
     const fetchPosts = async () => {
@@ -30,7 +30,7 @@ export default function Feed() {
   return ( 
     <div className='home'>
       <div className='leftBar'>
-        
+
       </div>
 
       <div className='feed'> 

@@ -16,7 +16,7 @@
   justify-content: start;
   align-items: center;
   margin: 0;
-  gap: 10px
+  gap: 20px
 
 }
 
@@ -27,5 +27,5 @@
 
 .rightBar {
   background-color: dimgray;
-  width: 40vw
+  width: 40vw;
 }

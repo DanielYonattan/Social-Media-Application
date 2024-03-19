@@ -15,10 +15,16 @@
     background-color: dimgray;
     height: 200px;
     text-align: left;
-    max-width: 40vw;
+    width: 100%;
+    font-size: large;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-left: 5px;
+
 }
 
 .poster-info {
     background-color: lightblue;
     height: 30%;
+    font-weight: 900;
 }

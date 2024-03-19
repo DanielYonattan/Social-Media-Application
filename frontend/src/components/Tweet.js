@@ -5,7 +5,7 @@ export default function Tweet({tweet}) {
     return (  
         <div className="tweet-container">
             <div className="poster-info">
-                {tweet.userId}
+               {tweet.username ? "@"+tweet.username :"@"+tweet.userId}
             </div>
             <div className="tweet">
                 {tweet.tweet}

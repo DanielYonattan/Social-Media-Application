@@ -1,20 +1,23 @@
-#postbox {
-    margin-right: 50px;
-}
+
 
 
 #tweet {
-    width: 100%;
+    width: 280px;
     height: 20vh;
     background-color: white;
     margin-top: 100px;
+    margin-right: 10px;
     position: fixed;
+    border-radius: 15px;
+    font-size: large;
+    font-weight: 700;
 
 }
 
 #tweet-button {
     margin-left: 100px;
-    margin-top: 250px;
+    margin-top: 270px;
     position: fixed;
+    border-radius: 8px;
 
 }

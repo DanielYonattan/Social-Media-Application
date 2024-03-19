@@ -29,8 +29,14 @@ router.post("/login", async (req,res) => {
 
         if (user == null)
             res.status(404).json("false");
-        else
-            res.status(200).json(user._id);
+        else { 
+            console.log(req.body.username)
+
+            res.status(200).json({
+                userId: user._id,
+                username: req.body.username });
+        }
+            
     }
     catch(err){
         res.status(500).json(err);
