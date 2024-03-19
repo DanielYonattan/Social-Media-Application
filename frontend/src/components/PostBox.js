@@ -16,14 +16,14 @@ async function postTweet(){
             }
             )
         })
-
+      
         
     }  
 
 export default function Postbox() { 
     return (  
         <div id="postbox">
-            <label for="name">from:</label>
+            <label for="name"></label>
             <input type="text" id="tweet" placeholder="What's going on" />
             <button id='tweet-button' onClick={(() => postTweet())}> Tweet</button>
       </div>

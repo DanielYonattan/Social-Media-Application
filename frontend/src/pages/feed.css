@@ -1,21 +1,31 @@
-.feed-container {
+.home {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .feed {
   display: flex;
-  background-color: red;
+  background-color: wheat;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100vw;
   height: 100%;
   justify-content: start;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
+  gap: 5px
+
 }
 
-.post-box {
-  background-color: crimson;
+.leftBar {
+  background-color: blue;
+  width: 40vw;
+}
+
+.rightBar {
+  background-color: blue;
+  width: 40vw
 }

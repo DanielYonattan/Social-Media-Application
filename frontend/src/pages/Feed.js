@@ -1,7 +1,6 @@
 import './feed.css';
 import Tweet from '../components/Tweet.js'
 import Postbox from '../components/PostBox.js'
-//import UserContext from "./Login"
 import React, {useState, useEffect, useContext} from "react"
 import {UserContext} from './Login.js'
 import { AuthContext } from '../UserContext.js'
@@ -29,14 +28,18 @@ export default function Feed() {
 
  
   return ( 
-    <div className='feed-container'>
+    <div className='home'>
+      <div className='leftBar'>
+        
+      </div>
+
       <div className='feed'> 
         {posts[0].map((tweet) => (
           <Tweet tweet={tweet} />
         ))}
       </div> 
 
-      <div className='post-box'>
+      <div className='rightBar'>
         <Postbox />
       </div>
     </div>
