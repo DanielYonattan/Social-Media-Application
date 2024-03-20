@@ -22,16 +22,13 @@ async function postTweet(posts, setPosts){
                 }
                 )
             })
-            
+
             document.querySelector('#tweet').value = ""
     }
     catch(err) {
         console.log(err)
-    }
-
- 
-        
-    }  
+    }       
+}  
 
 export default function Postbox({setPosts}) { 
     return (  

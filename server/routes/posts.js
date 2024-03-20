@@ -53,25 +53,24 @@ router.get("/:id", async (req, res) => {
 })
 
 // get timeline  
-// loop through following and extract all posts
 
-// 65b32a65a3fb52afff8e3d8c
 router.get("/feed/:id", async (req, res) => {
     try {
         const user = await User.findOne({_id: req.params.id})
         
         let posts = await Promise.all( 
-            user.following.map((person) => {
+            user.following.map((person) => { 
                 return Post.find({userId: person}).sort({_id: -1})
         }))
 
         const userPosts = await Post.find({userId: req.params.id}).sort({_id: -1})
 
         posts[0] = posts[0].concat(userPosts)
-        console.log(posts[0])
-        res.status(200).json(posts)
+        console.log(posts)
+        res.status(200).json(posts[0])
     }
     catch(err){
+        console.log(err)
         res.status(500).json(err)
     }
 })

@@ -18,7 +18,7 @@ export default function Feed() {
       setPosts(posts) 
     }  
     fetchPosts()  
-  })
+  }, [])
   
   if (posts == "") {
     return <Tweet tweet="empty" />
@@ -34,7 +34,7 @@ export default function Feed() {
       </div>
 
       <div className='feed'> 
-        {posts[0].map((tweet) => (
+        {posts.map((tweet) => (
           <Tweet tweet={tweet} />
         ))}
       </div> 
