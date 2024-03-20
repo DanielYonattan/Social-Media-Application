@@ -10,7 +10,7 @@ export default function Feed() {
   const auth = useContext(AuthContext)
   const [posts, setPosts] = useState([])
   const user = localStorage.getItem("userId")
-  console.log(user)
+  
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await fetch(`http://localhost:3000/api/posts/feed/${user}`)
@@ -18,7 +18,7 @@ export default function Feed() {
       setPosts(posts) 
     }  
     fetchPosts()  
-  }, [])
+  })
   
   if (posts == "") {
     return <Tweet tweet="empty" />
@@ -40,7 +40,7 @@ export default function Feed() {
       </div> 
 
       <div className='rightBar'>
-        <Postbox />
+        <Postbox setPosts={setPosts} />
       </div>
     </div>
     
