@@ -4,6 +4,7 @@ import Postbox from '../components/PostBox.js'
 import React, {useState, useEffect, useContext, useReducer} from "react"
 import {UserContext} from './Login.js'
 import { AuthContext } from '../UserContext.js'
+import Recs from '../components/Recs'
 
 
 export default function Feed() {
@@ -27,7 +28,7 @@ export default function Feed() {
   return ( 
     <div className='home'>
       <div className='leftBar'>
-
+       <Recs />
       </div>
 
       <div className='feed'> 
