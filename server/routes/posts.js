@@ -63,13 +63,20 @@ router.get("/feed/:id", async (req, res) => {
                 return Post.find({userId: person})
         }))
 
+       
+            
+
         const userPosts = await Post.find({userId: req.params.id}).sort({_id: -1})
 
-        posts[0] = posts[0].concat(userPosts)
-
-        posts[0].sort( (a, b) => b.createdAt - a.createdAt)
-        console.log(posts[0])
-        res.status(200).json(posts[0])
+        if (posts.length == 0) {
+            res.status(200).json(userPosts)
+        }
+        else { 
+            posts[0] = posts[0].concat(userPosts)
+            posts[0].sort( (a, b) => b.createdAt - a.createdAt)
+            console.log(posts[0])
+            res.status(200).json(posts[0])
+        }
     }
     catch(err){
         console.log(err)
