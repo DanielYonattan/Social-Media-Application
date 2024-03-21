@@ -1,7 +1,7 @@
 import './feed.css';
 import Tweet from '../components/Tweet.js'
 import Postbox from '../components/PostBox.js'
-import React, {useState, useEffect, useContext} from "react"
+import React, {useState, useEffect, useContext, useReducer} from "react"
 import {UserContext} from './Login.js'
 import { AuthContext } from '../UserContext.js'
 
@@ -10,6 +10,7 @@ export default function Feed() {
   const auth = useContext(AuthContext)
   const [posts, setPosts] = useState([])
   const user = localStorage.getItem("userId")
+
   
   useEffect(() => {
     const fetchPosts = async () => {
