@@ -20,12 +20,8 @@ export default function Feed() {
     fetchPosts()  
   }, [])
   
-  if (posts == "") {
-    return <Tweet tweet="empty" />
-  }
-  
-  
 
+  
  
   return ( 
     <div className='home'>
@@ -34,13 +30,16 @@ export default function Feed() {
       </div>
 
       <div className='feed'> 
-        {posts.map((tweet) => (
+    
+        {posts.length > 0 ? (posts.map((tweet) => (
           <Tweet tweet={tweet} />
-        ))}
+        ))) : console.log("empty feed")}
+
+
       </div> 
 
       <div className='rightBar'>
-        <Postbox setPosts={setPosts} />
+        <Postbox posts={posts} setPosts={setPosts} />
       </div>
     </div>
     
