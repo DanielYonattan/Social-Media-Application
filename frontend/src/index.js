@@ -17,7 +17,7 @@ root.render(
         <Routes>  
           <Route path="/home" element={<Feed />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/page/:username" element={<Page />}></Route>
+          <Route path="/page/:userId" element={<Page />}></Route>
         </Routes>
       </AuthProvider>
     </BrowserRouter> 

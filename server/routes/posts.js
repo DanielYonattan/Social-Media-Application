@@ -42,12 +42,12 @@ router.put("/:id", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
     try {
-        let post = []
-        post.push(await Post.find({userId: req.params.id}).sort({_id: -1})) 
-        console.log(post) 
-        res.status(200).json(post)
+        const posts = await Post.find({userId: req.params.id}).sort({_id: -1})
+        console.log(posts) 
+        res.status(200).json(posts)
     }
     catch(err){
+        console.log(err)
         res.status(500).json(err)
     }
 })

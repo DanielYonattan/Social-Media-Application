@@ -9,6 +9,7 @@ import { useParams } from 'react-router';
 export default function Page() {
     const [posts, setPosts] = useState([])
     const {userId} = useParams()
+    console.log(userId)
 
     useEffect(() => {
         const fetchPosts = async () => {
