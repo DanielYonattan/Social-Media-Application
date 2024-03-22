@@ -33,7 +33,7 @@ export default function Recs() {
                 </div>
                 <div className="rec-2">
                     <p>@daniel
-                    <button onClick={() => follow("65fa350d95d12352dacd60a0")}> Follow </button>
+                    <button onClick={() => follow("65f8cdfd26e7c546ec4ed05b")}> Follow </button>
                     </p>
                 </div>
                 <div className="rec-3">
