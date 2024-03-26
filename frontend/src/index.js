@@ -7,8 +7,8 @@ import Page from './pages/Page'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuthProvider from './UserContext.js'
 
-export const URL = process.env.URL
-console.log(process.env.URL) 
+export const URL = process.env.REACT_APP_URL
+console.log(process.env.REACT_APP_URL) 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
