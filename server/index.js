@@ -13,12 +13,17 @@ dotenv.config();
 console.log(process.env.MONGO_URL)
 mongoose.connect(process.env.MONGO_URL); 
 
-// middleware
+const corsOptions = {
+    origin:'*', 
+    credentials:true,           
+    optionSuccessStatus:200,
+ }
 
+// middleware
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
-app.use(cors())
+app.use(cors(corsOptions))
 app.disable('etag')
   
 app.use("/api/users", userRoute);
