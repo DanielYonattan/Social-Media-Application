@@ -2,6 +2,8 @@ import './postbox.css'
 import React, { useCallback } from "react"
 import Feed from '../pages/Feed.js'
 import Tweet from '../components/Tweet'
+import URL from './index.js'
+
 
 async function postTweet(setPosts){ 
         const userId = localStorage.getItem("userId")
@@ -17,14 +19,14 @@ async function postTweet(setPosts){
         }
 
         try { 
-            await fetch("http://localhost:3000/api/posts/", {
+            await fetch(`${URL}/api/posts/`, {
                 method: 'POST',
                 headers: {'content-Type': 'application/json'},  // headers, mode, and json.stringify
                 mode: 'cors',
                 body: JSON.stringify(tweetObj)
             })
 
-            const res = await fetch(`http://localhost:3000/api/posts/feed/${userId}`)
+            const res = await fetch(`${URL}/api/posts/feed/${userId}`)
             const posts = await res.json()
             setPosts(posts) 
         }

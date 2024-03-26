@@ -2,6 +2,7 @@ import './page.css'
 import React, {useState, useEffect} from "react"
 import Tweet from '../components/Tweet.js'
 import { useParams } from 'react-router';
+import URL from './index.js'
 
 
 
@@ -13,7 +14,7 @@ export default function Page() {
 
     useEffect(() => {
         const fetchPosts = async () => {
-          const res = await fetch(`http://localhost:3000/api/posts/${userId}`)
+          const res = await fetch(`${URL}/api/posts/${userId}`)
           const posts = await res.json()
           setPosts(posts) 
         }  

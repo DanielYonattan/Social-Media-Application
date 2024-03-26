@@ -1,4 +1,4 @@
-
+import URL from './index.js'
 import { useContext, createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => {
   
   const loginAction = async (username, password) => {
     try {
-      const response = await fetch("http://localhost:3000/api/auth/login", {
+      const response = await fetch(`${URL}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

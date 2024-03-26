@@ -5,6 +5,7 @@ import React, {useState, useEffect, useContext, useReducer} from "react"
 import {UserContext} from './Login.js'
 import { AuthContext } from '../UserContext.js'
 import Recs from '../components/Recs'
+import URL from './index.js'
 
 
 export default function Feed() {
@@ -16,7 +17,7 @@ export default function Feed() {
   
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch(`http://localhost:3000/api/posts/feed/${user}`)
+      const res = await fetch(`${URL}/api/posts/feed/${user}`)
       const posts = await res.json()
       setPosts(posts) 
     }  

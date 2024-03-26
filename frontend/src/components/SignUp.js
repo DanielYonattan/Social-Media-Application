@@ -1,4 +1,5 @@
 import './SignUp.css'
+import URL from './index.js'
 
 
 async function handleSignUp() {
@@ -13,7 +14,7 @@ async function handleSignUp() {
                     }
 
     try { 
-        await fetch("http://localhost:3000/api/auth/register", {
+        await fetch(`${URL}/api/auth/register`, {
             method: 'POST',
             headers: {'content-Type': 'application/json'},  // headers, mode, and json.stringify
             mode: 'cors',

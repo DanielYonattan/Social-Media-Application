@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import './recs.css' 
+import URL from './index.js'
+
 
 function FollowCard({recs}) {
     const [index, setIndex] = useState(0)
@@ -12,7 +14,7 @@ function FollowCard({recs}) {
     async function handleClick() { 
         if (recsLen > 0) { 
         try { 
-            await fetch(`http://localhost:3000/api/users/follow/${user}`, {
+            await fetch(`${URL}/api/users/follow/${user}`, {
                     method: 'PUT',
                     headers: {'content-Type': 'application/json'},  
                     mode: 'cors',
@@ -54,7 +56,7 @@ export default function Recs() {
     useEffect(() => {
         const getRecs = async () => {
             try {
-                const res = await fetch(`http://localhost:3000/api/users/notfollowing/${user}`, {
+                const res = await fetch(`${URL}/api/users/notfollowing/${user}`, {
                         method: 'GET',
                         headers: {'content-Type': 'application/json'},  
                         mode: 'cors',
