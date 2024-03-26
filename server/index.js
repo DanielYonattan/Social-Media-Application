@@ -14,9 +14,10 @@ console.log(process.env.MONGO_URL)
 mongoose.connect(process.env.MONGO_URL); 
 
 const corsOptions = {
-    origin:'*', 
-    credentials:true,           
-    optionSuccessStatus:200,
+    origin: "*", 
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
+    credentials: true
  }
 
 // middleware
