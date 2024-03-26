@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './recs.css' 
-import URL from './index.js'
+import URL from '../index.js'
 
 
 function FollowCard({recs}) {

@@ -1,5 +1,5 @@
 import './SignUp.css'
-import URL from './index.js'
+import URL from '../index.js'
 
 
 async function handleSignUp() {
