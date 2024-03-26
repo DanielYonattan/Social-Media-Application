@@ -7,7 +7,7 @@ import Page from './pages/Page'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuthProvider from './UserContext.js'
 
-export const URL = process.env.URL
+export const URL = process.env.NEXT_PUBLIC_URL
 console.log(process.env.NEXT_PUBLIC_URL) 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
