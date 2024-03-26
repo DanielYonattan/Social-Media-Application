@@ -5,7 +5,7 @@ import React, {useState, useEffect, useContext, useReducer} from "react"
 import {UserContext} from './Login.js'
 import { AuthContext } from '../UserContext.js'
 import Recs from '../components/Recs'
-import URL from '../index.js'
+import {URL} from '../index.js'
 
 
 export default function Feed() {

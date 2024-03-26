@@ -2,7 +2,7 @@ import './postbox.css'
 import React, { useCallback } from "react"
 import Feed from '../pages/Feed.js'
 import Tweet from '../components/Tweet'
-import URL from '../index.js'
+import {URL} from '../index.js'
 
 
 async function postTweet(setPosts){ 

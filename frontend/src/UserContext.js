@@ -1,4 +1,4 @@
-import URL from './index.js'
+import {URL} from './index.js'
 import { useContext, createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
