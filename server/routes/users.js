@@ -73,15 +73,15 @@ router.put("/follow/:id", async (req, res) => {
             user.following.push(req.body.followId);
             toFollow.followers.push(req.body.userId);
             await user.save();
-            res.status(200).json(user.following);
+            res.status(200).json(user.following); 
         }
         else {
-            res.status(403).json("Already follwing user")
+            console.log("already following")
         }
 
     } 
     catch(err){ 
-        res.status(500).json(err);
+        res.status(500).json(err); 
     }
 }) 
 

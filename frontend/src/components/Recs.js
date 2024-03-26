@@ -1,49 +1,61 @@
 import { useState } from 'react'
 import './recs.css' 
 
-export default function Recs() {
-    async function follow(toFollow) {
+
+
+
+
+
+
+function FollowCard() {
+    const [index, setIndex] = useState(0)
+    const trustedAccounts = [{"username": "apple", "userId":"66022aac3f126b720d27ff0a"}, 
+                            {"username": "spotify", "userId":"66022ad43f126b720d27ff0c"},
+                            {"username": "nike", "userId":"66022a993f126b720d27ff03"}];
     const user = localStorage.getItem("userId")
 
-    try { 
-        await fetch(`http://localhost:3000/api/users/follow/${user}`, {
-                method: 'PUT',
-                headers: {'content-Type': 'application/json'},  // headers, mode, and json.stringify
-                mode: 'cors',
-                body: JSON.stringify({
-                    "userId": user,
-                    "followId": toFollow
 
-                })
-            })
+    async function handleClick() { 
+        try { 
+            await fetch(`http://localhost:3000/api/users/follow/${trustedAccounts[index].userId}`, {
+                    method: 'PUT',
+                    headers: {'content-Type': 'application/json'},  
+                    mode: 'cors',
+                    body: JSON.stringify({
+                        "userId": user,
+                        "followId": trustedAccounts[index].userId
+    
+                    })  
+                }) 
+            }
+            catch(err) {
+                console.log(err)
+            }
+            setIndex((index + 1) % 3)
         }
-        catch(err) {
-            console.log(err)
-        }
+ 
+    return (
+    <div className="recs">
+        <div className="rec-1">
+            <p>@ {trustedAccounts[index].username}
+                <button onClick={handleClick}>follow</button>
+            </p>
+        </div>
+    </div>
+)
 }
+
+
+
+
+export default function Recs() {
 
     return (
         <div className='recsbox'> 
-            <p>follow some accounts</p>
-            <div className="recs">
-                <div className="rec-1">
-                    <p>@daniel
-                    <button>follow</button>
-                    </p>
-                </div>
-                <div className="rec-2">
-                    <p>@daniel
-                    <button onClick={() => follow("65f8cdfd26e7c546ec4ed05b")}> Follow </button>
-                    </p>
-                </div>
-                <div className="rec-3">
-                    <p>@daniel
-                    <button>follow</button>
-                    </p>
-                </div>
+            <p>follow an account</p>
+            {<FollowCard />}
          </div>
 
-        </div>
         
     )
 }
