@@ -11,6 +11,7 @@ export default function Feed() {
   const auth = useContext(AuthContext)
   const [posts, setPosts] = useState([])
   const user = localStorage.getItem("userId")
+  console.log(user)
 
   
   useEffect(() => {

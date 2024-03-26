@@ -58,9 +58,6 @@ router.get("/get/:id", async (req, res) => {
 
 // follow
 router.put("/follow/:id", async (req, res) => {
-    if (req.body.userId != req.params.id || req.body.userId == req.body.followId)
-        res.status(403).json("cannot update an account you don't own");
-
     try{ 
         const user = await User.findOne({
             _id: req.params.id
@@ -73,7 +70,7 @@ router.put("/follow/:id", async (req, res) => {
             user.following.push(req.body.followId);
             toFollow.followers.push(req.body.userId);
             await user.save();
-            res.status(200).json(user.following); 
+            await toFollow.save()
         }
         else {
             console.log("already following")
@@ -83,6 +80,9 @@ router.put("/follow/:id", async (req, res) => {
     catch(err){ 
         res.status(500).json(err); 
     }
+
+    res.status(200).json(); 
+
 }) 
 
 // unfollow
@@ -113,5 +113,20 @@ router.put("/unfollow/:id", async (req, res) => {
         res.status(500).json(err);
     }
 }) 
+
+
+// get list of users the account is not currently following
+
+router.get("/notfollowing/:id", async (req, res) => {
+    try {
+        const notfollowing = await User.find({"followers": {"$ne": req.params.id}})
+        res.status(200).json(notfollowing)
+
+    }
+    catch (err){
+        console.log(err)
+        res.status(500).json(err)
+    }
+})
 
 module.exports = router;

@@ -19,6 +19,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
 app.use(cors())
+app.disable('etag')
   
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);

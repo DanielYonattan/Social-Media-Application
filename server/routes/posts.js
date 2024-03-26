@@ -12,7 +12,6 @@ router.post("/", async (req, res) => {
     }
     catch(err){ 
         res.status(500).json(err);
-        console.log(req.body)
     }
 
 })
@@ -63,19 +62,20 @@ router.get("/feed/:id", async (req, res) => {
                 return Post.find({userId: person})
         }))
 
-       
-            
-
         const userPosts = await Post.find({userId: req.params.id}).sort({_id: -1})
 
         if (posts.length == 0) {
             res.status(200).json(userPosts)
         }
         else { 
-            posts[0] = posts[0].concat(userPosts)
-            posts[0].sort( (a, b) => b.createdAt - a.createdAt)
-            console.log(posts[0])
-            res.status(200).json(posts[0])
+            console.log(posts.length)
+            posts.push(userPosts)
+            console.log(posts.length)
+            const flattenedPostLs = posts.flat(1)
+            console.log(flattenedPostLs.length)
+            flattenedPostLs.sort( (a, b) => b.createdAt - a.createdAt)
+            //console.log(posts[0])
+            res.status(200).json(flattenedPostLs)
         }
     }
     catch(err){
