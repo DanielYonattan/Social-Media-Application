@@ -28,8 +28,12 @@ router.post("/login", async (req,res) => {
             password: req.body.password
         });
 
-        if (user == null)
+        if (user == null) { 
+            res.header('Access-Control-Allow-Origin', "*");
+            res.header('Access-Control-Allow-Headers', "*");
             res.status(404).json("false");
+
+        }
         else { 
             console.log(req.body.username)
 
