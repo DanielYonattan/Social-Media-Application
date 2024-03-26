@@ -36,6 +36,8 @@ router.post("/login", async (req,res) => {
         }
         else { 
             console.log(req.body.username)
+            res.header('Access-Control-Allow-Origin', "*");
+            res.header('Access-Control-Allow-Headers', "*");
 
             res.status(200).json({
                 userId: user._id,
