@@ -56,6 +56,20 @@ router.get("/get/:id", async (req, res) => {
     }
 })
 
+// get by username
+router.get("/get/byusername/:username", async (req, res) => {
+    try {
+        user = await User.findOne({
+            username: req.params.username
+        })
+
+        res.status(200).json(user._id);
+    }
+    catch(err){ 
+        res.status(500).json("False");
+    }
+})
+
 // follow
 router.put("/follow/:id", async (req, res) => {
     try{ 
