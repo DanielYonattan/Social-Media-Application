@@ -6,22 +6,36 @@
     width: 100vw;
     height: 7vh;
     color: white;
+    margin-bottom: 20px;
 }
 
 .home-button a {
     color: white;
     text-decoration: none;
     font-size: x-large;
+}
+
+.home-button {
+    margin-top: 10px;
     margin-left: 20px;
+
 }
 
 .searchbar {
-    height: 1px ;
     margin-left: auto;
     margin-right: auto;
 }
 
 #userSearch {
-    width: 30vw;
+    width: 20vw;
     height: 30px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#search-button {
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #06161f;
+    color: white;
 }

@@ -38,7 +38,7 @@ export default function TopBar() {
             <div className="searchbar">
                 <form id="form"> 
                 <input type="search" id="userSearch" placeholder="Search..."></input>
-                <button type="button" onClick={handleSearch}>Search</button>
+                <button id="search-button" type="button" onClick={handleSearch}>Search</button>
                 </form>
             </div>
         </div>

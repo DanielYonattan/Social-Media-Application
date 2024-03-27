@@ -42,7 +42,7 @@ export default function Postbox({posts, setPosts}) {
             <input type="text" id="tweet" placeholder=" What's going on" />
             <button id='tweet-button' onClick={(() => { 
                 postTweet(setPosts)
-            }) }> Tweet</button>
+            }) }> Post</button>
       </div>
     )
 }

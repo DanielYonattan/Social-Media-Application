@@ -15,6 +15,8 @@
     margin-left: 100px;
     margin-top: 270px;
     position: fixed;
-    border-radius: 8px;
-
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #06161f;
+    color: white;
 }

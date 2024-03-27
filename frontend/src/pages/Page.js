@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react"
 import Tweet from '../components/Tweet.js'
 import { useParams } from 'react-router';
 import {URL} from '../index.js'
-
+import TopBar from '../components/TopBar'
 
 
 
@@ -23,6 +23,8 @@ export default function Page() {
 
 
   return ( 
+    <> 
+      <TopBar />
 
       <div className='feed'> 
     
@@ -31,6 +33,7 @@ export default function Page() {
         ))) : console.log("empty feed")}
 
       </div> 
+    </>
     
   );
 }
