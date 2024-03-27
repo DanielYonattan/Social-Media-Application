@@ -23,15 +23,13 @@ router.post("/register", async (req, res) => {
 // login
 router.post("/login", async (req,res) => {
     try {
-        const user = await User.findOne({
+            const user = await User.findOne({
             username: req.body.username,
             password: req.body.password
         });
 
         if (user == null) { 
-            res.header('Access-Control-Allow-Origin', "*");
-            res.header('Access-Control-Allow-Headers', "*");
-            res.status(404).json("false");
+            res.status(404).json("false").header('Access-Control-Allow-Origin', "*").header('Access-Control-Allow-Headers', "*").send();
 
         }
         else { 

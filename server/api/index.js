@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
-const userRoute = require("./routes/users");
-const authRoute = require("./routes/auth");
-const postRoute = require("./routes/posts")
+const userRoute = require("./users");
+const authRoute = require("./auth");
+const postRoute = require("./posts")
 const cors = require("cors")
 
 dotenv.config();
