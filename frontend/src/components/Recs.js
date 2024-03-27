@@ -38,6 +38,9 @@ function FollowCard({recs, setPosts}) {
     }
  
     return (
+    <>
+    <p>Follow an Account</p>
+
     <div className="recs">
         <div className="rec-1">
             <p>@ { recsLen > 0 ? recs[index].username : ""}
@@ -45,6 +48,7 @@ function FollowCard({recs, setPosts}) {
             </p>
         </div>
     </div>
+    </>
 )
 }
 
@@ -83,8 +87,7 @@ export default function Recs({setPosts}) {
 
     return (
         <div className='recsbox'> 
-            <p>Follow an Account</p>
-            {<FollowCard recs={recs} setPosts={setPosts}/>}
+            {recs.length > 0 ? <FollowCard recs={recs} setPosts={setPosts}/> : ""}
          </div>
 
         
