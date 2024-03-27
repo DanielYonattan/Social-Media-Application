@@ -3,12 +3,10 @@ import './recs.css'
 import {URL} from '../index.js'
 
 
-function FollowCard({recs}) {
+function FollowCard({recs, setPosts}) {
     const [index, setIndex] = useState(0)
     const recsLen = recs.length
     const user = localStorage.getItem("userId")
-
-    console.log("++"+recs)
 
     // follow the user
     async function handleClick() { 
@@ -24,6 +22,11 @@ function FollowCard({recs}) {
     
                     })  
                 }) 
+            
+            // refresh feed
+            const res = await fetch(`${URL}/api/posts/feed/${user}`)
+            const posts = await res.json()
+            setPosts(posts) 
             }
             catch(err) {
                 console.log(err)
@@ -48,7 +51,7 @@ function FollowCard({recs}) {
 
 
 
-export default function Recs() {
+export default function Recs({setPosts}) {
     const user = localStorage.getItem("userId")
     const [recs, setRecs] = useState([])
 
@@ -81,7 +84,7 @@ export default function Recs() {
     return (
         <div className='recsbox'> 
             <p>follow an account</p>
-            {<FollowCard recs={recs}/>}
+            {<FollowCard recs={recs} setPosts={setPosts}/>}
          </div>
 
         

@@ -26,9 +26,9 @@ async function postTweet(setPosts){
                 body: JSON.stringify(tweetObj)
             })
 
-           // const res = await fetch(`${URL}/api/posts/feed/${userId}`)
-            //const posts = await res.json()
-            //setPosts(posts) 
+            const res = await fetch(`${URL}/api/posts/feed/${userId}`)
+            const posts = await res.json()
+            setPosts(posts) 
         }
         catch(err) {
             console.log(err)

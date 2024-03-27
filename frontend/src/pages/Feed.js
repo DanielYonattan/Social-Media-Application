@@ -30,7 +30,7 @@ export default function Feed() {
   return ( 
     <div className='home'>
       <div className='leftBar'>
-       <Recs />
+       <Recs setPosts={setPosts}/>
       </div>
 
       <div className='feed'> 
