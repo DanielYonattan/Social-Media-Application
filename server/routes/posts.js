@@ -69,7 +69,7 @@ router.get("/feed/:id", async (req, res) => {
         }
         else { 
             console.log(posts.length)
-            posts.push(userPosts)
+            //posts.push(userPosts)
             console.log(posts.length)
             const flattenedPostLs = posts.flat(1)
             console.log(flattenedPostLs.length)

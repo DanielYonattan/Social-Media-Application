@@ -119,7 +119,7 @@ router.put("/unfollow/:id", async (req, res) => {
 
 router.get("/notfollowing/:id", async (req, res) => {
     try {
-        const notfollowing = await User.find({"followers": {"$ne": req.params.id}})
+        const notfollowing = await User.find({"followers": {"$ne": req.params.id}, "_id": {"$ne": req.params.id}})
         res.status(200).json(notfollowing)
 
     }

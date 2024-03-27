@@ -7,7 +7,7 @@ import Page from './pages/Page'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuthProvider from './UserContext.js'
 
-export const URL = "http:localhost:3000"
+export const URL = "http://localhost:3000"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

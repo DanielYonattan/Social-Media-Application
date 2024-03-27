@@ -28,19 +28,9 @@ router.post("/login", async (req,res) => {
             password: req.body.password
         });
 
-        if (user == null) { 
-            res.status(404).json("false").header('Access-Control-Allow-Origin', "*").header('Access-Control-Allow-Headers', "*").send();
-
-        }
-        else { 
-            console.log(req.body.username)
-            res.header('Access-Control-Allow-Origin', "*");
-            res.header('Access-Control-Allow-Headers', "*");
-
-            res.status(200).json({
-                userId: user._id,
-                username: req.body.username });
-        }
+        res.status(200).json({
+            userId: user._id,
+            username: req.body.username });
             
     }
     catch(err){
