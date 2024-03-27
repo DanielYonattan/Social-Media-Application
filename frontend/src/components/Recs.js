@@ -83,7 +83,7 @@ export default function Recs({setPosts}) {
 
     return (
         <div className='recsbox'> 
-            <p>follow an account</p>
+            <p>Follow an Account</p>
             {<FollowCard recs={recs} setPosts={setPosts}/>}
          </div>
 

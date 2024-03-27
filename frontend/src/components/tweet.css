@@ -1,5 +1,5 @@
 .tweet-container {
-    background-color: dimgray;
+    background-color: #06161f;
     display: flex;
     flex-direction: column;
     flex-grow: 2;
@@ -12,7 +12,7 @@
 }
 
 .tweet {
-    background-color: dimgray;
+    background-color: #06161f;
     height: 200px;
     text-align: left;
     width: 100%;
@@ -20,6 +20,7 @@
     font-weight: 700;
     padding-top: 10px;
     padding-left: 5px;
+    color: white;
 
 }
 

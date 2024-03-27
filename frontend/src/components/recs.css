@@ -1,16 +1,13 @@
 .recsbox {
     width: 20vw;
     height: fit-content;
-    background-color: dimgray;
+    background-color: 06161f;
+    color: white;
     margin-top: 300px;
     margin-left: 10px;
     position: fixed;
-    border-radius: 15px;
     font-size: large;
     font-weight: 700;
-    border-width: 5px;
-    border-style: solid;
-    border-color: black;
 }
 
 button {

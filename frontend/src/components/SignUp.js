@@ -1,4 +1,4 @@
-import './SignUp.css'
+import '../pages/login.css'
 import {URL} from '../index.js'
 
 
@@ -32,20 +32,17 @@ async function handleSignUp() {
 
 export default function SignUp() {
 
-
-
     return (
     <form onSubmit={handleSignUp}>
-        <label id="username_label" for="username">Enter a username, no spaces: </label>
-        <input placeholder='username' id='username_signup'/> <br></br>
+        <div className='signin'>
+            <input placeholder='username' id='username_signup'/>
+            
+            <input placeholder='password' id='password_signup'/> 
+            
+            <input placeholder='email' id='email'/> 
         
-        <label id="pass_label" for="password">Enter a password: </label>
-        <input placeholder='password' id='password_signup'/> <br></br>
-        
-        <label id="email_label" for="email">Enter your email, no spaces: </label>
-        <input placeholder='email' id='email'/> <br></br>
-       
-        <input type="submit" value="Submit"></input>
+            <input className="submit-signup" type="submit" value="Submit"></input>
+        </div>
     </form>
     )
 }

@@ -1,5 +1,5 @@
 body {
-  background-color: dimgray;
+  background-color: #06161f;
 }
 
 .home {
@@ -12,7 +12,7 @@ body {
 
 .feed {
   display: flex;
-  background-color: dimgray;
+  background-color: #06161f;
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -25,11 +25,11 @@ body {
 }
 
 .leftBar {
-  background-color: dimgray;
+  background-color: #06161f;
   width: 40vw;
 }
 
 .rightBar {
-  background-color: dimgray;
+  background-color: #06161f;
   width: 40vw;
 }

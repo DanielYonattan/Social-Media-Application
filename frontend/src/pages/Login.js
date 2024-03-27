@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 import SignUp from '../components/SignUp';
 
 
+
+
 export default function Login() {
     const [signUp, setSignUp] = useState(false);
     const auth = useContext(AuthContext)
@@ -18,17 +20,21 @@ export default function Login() {
     }
 
 
-    return (
-        
-        <div>
-            <input placeholder='username' id='username_login'/>
-            <input placeholder='password' id='password_login'/>
-            <button className='login-button' onClick={handleLogin}>Login</button>
-            <button className='signup-button' onClick={() => setSignUp(!signUp)}>Sign-up</button>
-            { signUp && <SignUp />}
+    function LoginForm() {
+        return (
+            <div className='signin'>
+                <input placeholder='username' id='username_login'/>
+                <input placeholder='password' id='password_login'/>
+                <button className='login-button' onClick={handleLogin}>Login</button>
+            </div>
+        )
+    }
 
+    return ( 
+        <div className='login-page'>
+            <button className='signup-button' onClick={() => setSignUp(!signUp)}>Sign-up</button>
+            {!signUp ? <LoginForm /> : <SignUp />}
         </div>
-      
     );
 }
 
