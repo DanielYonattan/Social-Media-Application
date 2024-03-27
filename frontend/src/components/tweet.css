@@ -29,3 +29,7 @@
     height: 30%;
     font-weight: 900;
 }
+
+.poster-info a {
+    text-decoration: none;
+}

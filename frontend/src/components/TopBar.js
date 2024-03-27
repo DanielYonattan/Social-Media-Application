@@ -1,5 +1,5 @@
 import "./topbar.css"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { URL } from '../index.js'
 
 
@@ -33,7 +33,7 @@ export default function TopBar() {
     return (
         <div className="topbar">
             <div className="home-button">
-                home
+                <Link to={"/home"}> Home </Link> 
             </div>
             <div className="searchbar">
                 <form id="form"> 
