@@ -1,0 +1,24 @@
+.topbar {
+    display: flex;
+    flex-direction: row;
+    position: ab;
+    background-color: #06161f;
+    width: 100vw;
+    height: 7vh;
+    color: white;
+}
+
+.home-button {
+    color: white;
+}
+
+.searchbar {
+    height: 1px ;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#userSearch {
+    width: 30vw;
+    height: 30px;
+}

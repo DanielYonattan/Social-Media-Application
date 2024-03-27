@@ -6,6 +6,7 @@ import {UserContext} from './Login.js'
 import { AuthContext } from '../UserContext.js'
 import Recs from '../components/Recs'
 import {URL} from '../index.js'
+import TopBar from '../components/TopBar';
 
 
 export default function Feed() {
@@ -28,7 +29,11 @@ export default function Feed() {
   
  
   return ( 
-    <div className='home'>
+    <div className='home-page'>
+      <>
+      <TopBar />
+      </>
+      <div className='home'>
       <div className='leftBar'>
        <Recs setPosts={setPosts}/>
       </div>
@@ -45,8 +50,8 @@ export default function Feed() {
       <div className='rightBar'>
         <Postbox posts={posts} setPosts={setPosts} />
       </div>
+      </div>
     </div>
-    
   );
 } 
    

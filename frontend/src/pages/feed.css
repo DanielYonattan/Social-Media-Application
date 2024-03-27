@@ -2,6 +2,11 @@ body {
   background-color: #06161f;
 }
 
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
+
 .home {
   display: flex;
   flex-direction: row;
