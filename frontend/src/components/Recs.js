@@ -36,20 +36,22 @@ function FollowCard({recs, setPosts}) {
             setIndex((index + 1) % recsLen)
         }
     }
- 
+    
     return (
+    ( (recsLen > 0 && index != recsLen - 1) &&
     <>
-    <p>Follow an Account</p>
+        <p>Follow an Account</p>
 
-    <div className="recs">
-        <div className="rec-1">
-            <p>@ { recsLen > 0 ? recs[index].username : ""}
-                <button onClick={handleClick}>follow</button>
-            </p>
+        <div className="recs">
+            <div className="rec-1">
+                <p>
+                    @ { recsLen > 0 && index != recsLen - 1 ? recs[index].username : ""}
+                    <button onClick={handleClick}>follow</button>
+                </p>
+            </div>
         </div>
-    </div>
     </>
-)
+))
 }
 
 
