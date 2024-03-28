@@ -69,12 +69,11 @@ router.get("/feed/:id", async (req, res) => {
         }
         else { 
             console.log(posts.length)
-            //posts.push(userPosts)
+            posts.push(userPosts)
             console.log(posts.length)
             const flattenedPostLs = posts.flat(1)
             console.log(flattenedPostLs.length)
             flattenedPostLs.sort( (a, b) => b.createdAt - a.createdAt)
-            //console.log(posts[0])
             res.status(200).json(flattenedPostLs)
         }
     }
