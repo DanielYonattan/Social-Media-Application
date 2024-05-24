@@ -5,8 +5,6 @@ import { useParams } from 'react-router';
 import {URL} from '../index.js'
 import TopBar from '../components/TopBar'
 
-
-
 export default function Page() {
     const [posts, setPosts] = useState([])
     const {userId} = useParams()
@@ -21,17 +19,13 @@ export default function Page() {
         fetchPosts()  
       }, [])
 
-
   return ( 
     <> 
       <TopBar />
-
       <div className='feed'> 
-    
         {posts.length > 0 ? (posts.map((tweet) => (
           <Tweet tweet={tweet} />
         ))) : console.log("empty feed")}
-
       </div> 
     </>
     

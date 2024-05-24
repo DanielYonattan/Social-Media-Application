@@ -54,9 +54,6 @@ function FollowCard({recs, setPosts}) {
 ))
 }
 
-
-
-
 export default function Recs({setPosts}) {
     const user = localStorage.getItem("userId")
     const [recs, setRecs] = useState([])
@@ -91,7 +88,5 @@ export default function Recs({setPosts}) {
         <div className='recsbox'> 
             {recs.length > 0 ? <FollowCard recs={recs} setPosts={setPosts}/> : ""}
          </div>
-
-        
     )
 }

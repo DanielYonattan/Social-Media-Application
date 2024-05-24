@@ -23,7 +23,6 @@ router.put("/update/:id", async (req, res) => {
     }
 }) 
   
- 
 // delete
 router.delete("/delete/:id", async (req, res) => {
     if (req.body.userId != req.params.id)
@@ -130,7 +129,6 @@ router.put("/unfollow/:id", async (req, res) => {
 
 
 // get list of users the account is not currently following
-
 router.get("/notfollowing/:id", async (req, res) => {
     try {
         const notfollowing = await User.find({"followers": {"$ne": req.params.id}, "_id": {"$ne": req.params.id}})

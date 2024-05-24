@@ -2,12 +2,11 @@ import './feed.css';
 import Tweet from '../components/Tweet.js'
 import Postbox from '../components/PostBox.js'
 import React, {useState, useEffect, useContext, useReducer} from "react"
-import {UserContext} from './Login.js'
+import { UserContext } from './Login.js'
 import { AuthContext } from '../UserContext.js'
 import Recs from '../components/Recs'
-import {URL} from '../index.js'
+import { URL } from '../index.js'
 import TopBar from '../components/TopBar';
-
 
 export default function Feed() {
   const auth = useContext(AuthContext)
@@ -25,9 +24,6 @@ export default function Feed() {
     fetchPosts()  
   }, [])
   
-
-  
- 
   return ( 
     <div className='home-page'>
       <>
@@ -39,12 +35,9 @@ export default function Feed() {
       </div>
 
       <div className='feed'> 
-    
         {posts.length > 0 ? (posts.map((tweet) => (
           <Tweet tweet={tweet} />
         ))) : console.log("empty feed")}
-
-
       </div> 
 
       <div className='rightBar'>

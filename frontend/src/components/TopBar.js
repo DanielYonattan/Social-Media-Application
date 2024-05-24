@@ -5,7 +5,6 @@ import { URL } from '../index.js'
 
 export default function TopBar() {
     const navigate = useNavigate()
-
     async function handleSearch() {
 
         const toSearch = document.querySelector('#userSearch').value
@@ -26,9 +25,6 @@ export default function TopBar() {
         }
         
     }
-
-
-
 
     return (
         <div className="topbar">

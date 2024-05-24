@@ -1,7 +1,6 @@
 import '../pages/login.css'
 import {URL} from '../index.js'
 
-
 async function handleSignUp() {
     const username = document.querySelector('#username_signup').value
     const password = document.querySelector('#password_signup').value
@@ -20,18 +19,13 @@ async function handleSignUp() {
             mode: 'cors',
             body: JSON.stringify(userReg)
         })
-
-
     }
     catch(err) {
         console.log(err)
     }   
 }
 
-
-
 export default function SignUp() {
-
     return (
     <form onSubmit={handleSignUp}>
         <div className='signin'>

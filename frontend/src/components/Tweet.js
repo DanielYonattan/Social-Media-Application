@@ -2,7 +2,6 @@ import "./tweet.css"
 import { Link } from "react-router-dom";
 import Feed from '../pages/Feed'
 
-
 export default function Tweet({tweet}) { 
     console.log(tweet)
     return (  

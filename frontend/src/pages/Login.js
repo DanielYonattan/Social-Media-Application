@@ -5,9 +5,6 @@ import { AuthContext } from '../UserContext.js'
 import { useNavigate } from 'react-router-dom'
 import SignUp from '../components/SignUp';
 
-
-
-
 export default function Login() {
     const [signUp, setSignUp] = useState(false);
     const auth = useContext(AuthContext)

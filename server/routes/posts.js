@@ -33,12 +33,7 @@ router.put("/:id", async (req, res) => {
     }
 })
 
-// delete post
-
-// like post
-
 // get post from a user
-
 router.get("/:id", async (req, res) => {
     try {
         const posts = await Post.find({userId: req.params.id}).sort({_id: -1})
@@ -52,7 +47,6 @@ router.get("/:id", async (req, res) => {
 })
 
 // get timeline  
-
 router.get("/feed/:id", async (req, res) => {
     try {
         const user = await User.findOne({_id: req.params.id})
