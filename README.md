@@ -1,5 +1,3 @@
-# fb-clone
-
 # Steps
 
 Clone the repo
